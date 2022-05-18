@@ -7,7 +7,7 @@ export default function AddTodoForm({
     <form onSubmit={onAddFormSubmit}>
       <h2>ToDo List</h2>
       <label htmlFor="todo"></label>
-      <div class="ui input">
+      <div className="ui input">
         <input
           name="todo"
           type="text"
@@ -16,7 +16,7 @@ export default function AddTodoForm({
           onChange={onAddInputChange}
         />
       </div>
-      <button class="ui primary button" type="submit" onClick={onAddFormSubmit}>
+      <button className="ui primary button" type="submit" onClick={onAddFormSubmit}>
         ＋ 追加
       </button>
     </form>

@@ -5,12 +5,8 @@ import EditForm from "./components/EditForm";
 import "./styles.css";
 
 // 　・ID(連番もしくはuuidを設定)
-// ▼余裕があれば以下のようなカスタマイズをする
-// 　・フィルター(ID、期限、ステータスで絞り込み)
-// 　　or
-// 　・ソート(ID、期限、ステータスで並べ替え)
-// 　・要素追加（内容、作成日、更新日など）
-// 　・ステータス変更でスタイル変更
+// uuid React
+// React17に変更
 
 export default function App() {
   const [todos, setTodos] = useState(() => {
@@ -29,16 +25,16 @@ export default function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  function handleAddInputChange(e) {
+  const handleAddInputChange = (e) => {
     setTodo(e.target.value);
-  }
+  };
 
-  function handleEditInputChange(e) {
+  const handleEditInputChange = (e) => {
     setCurrentTodo({ ...currentTodo, text: e.target.value });
     console.log(currentTodo);
-  }
+  };
 
-  function handleAddFormSubmit(e) {
+  const handleAddFormSubmit = (e) => {
     e.preventDefault();
 
     if (todo !== "") {
@@ -52,33 +48,33 @@ export default function App() {
     }
 
     setTodo("");
-  }
+  };
 
-  function handleEditFormSubmit(e) {
+  const handleEditFormSubmit = (e) => {
     e.preventDefault();
 
     handleUpdateTodo(currentTodo.id, currentTodo);
-  }
+  };
 
-  function handleDeleteClick(id) {
+  const handleDeleteClick = (id) => {
     const removeItem = todos.filter((todo) => {
       return todo.id !== id;
     });
     setTodos(removeItem);
-  }
+  };
 
-  function handleUpdateTodo(id, updatedTodo) {
+  const handleUpdateTodo = (id, updatedTodo) => {
     const updatedItem = todos.map((todo) => {
       return todo.id === id ? updatedTodo : todo;
     });
     setIsEditing(false);
     setTodos(updatedItem);
-  }
+  };
 
-  function handleEditClick(todo) {
+  const handleEditClick = (todo) => {
     setIsEditing(true);
     setCurrentTodo({ ...todo });
-  }
+  };
 
   return (
     <div className="App">

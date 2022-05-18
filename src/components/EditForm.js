@@ -8,7 +8,7 @@ export default function EditForm({
     <form onSubmit={onEditFormSubmit}>
       <h2 style={{ color: "#0E6EB8" }}>ToDoを編集</h2>
       <label htmlFor="updateTodo"></label>
-      <div class="ui input">
+      <div className="ui input">
         <input
           name="updateTodo"
           type="text"
@@ -18,13 +18,13 @@ export default function EditForm({
         />
       </div>
       <button
-        class="ui primary button"
+        className="ui primary button"
         type="submit"
         onClick={onEditFormSubmit}
       >
         修正
       </button>
-      <button class="ui button" onClick={() => setIsEditing(false)}>
+      <button className="ui button" onClick={() => setIsEditing(false)}>
         キャンセル
       </button>
     </form>
