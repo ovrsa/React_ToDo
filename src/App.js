@@ -3,10 +3,6 @@ import TodoItem from "./components/TodoItem";
 import AddTodoForm from "./components/AddTodoForm";
 import EditForm from "./components/EditForm";
 import "./styles.css";
-import uuid from "react-uuid";
-
-// 　・ID(連番もしくはuuidを設定)
-// uuid React
 
 export default function App() {
   //todoを管理するために必要
@@ -113,7 +109,7 @@ export default function App() {
       )}
 
       {/* リストを保持するためのulを作成 */}
-      <ul className="todo-list">
+      <ul className="todo-list" style={{ listStyle: "none" }}>
         {/* todoの配列にマッピングし、各Todoに対して新しいliを作成する */}
         {/* 必ず、todo.idの値を "key "プロパティとして、li要素に追加する事)
         オブジェクトの配列なので、"text "プロパティにアクセスする必要がある

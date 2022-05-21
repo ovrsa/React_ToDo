@@ -5,11 +5,12 @@ export default function EditForm({
   onEditFormSubmit,
 }) {
   return (
-    <form onSubmit={onEditFormSubmit}>
+    <form onSubmit={onEditFormSubmit} style={{ textAlign: "center" }}>
       <h2 style={{ color: "#0E6EB8" }}>ToDoを編集</h2>
       <label htmlFor="updateTodo"></label>
       <div className="ui input">
         <input
+          style={{ marginRight: "5px" }}
           name="updateTodo"
           type="text"
           placeholder="Update todo"
