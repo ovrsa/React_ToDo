@@ -13,10 +13,9 @@ export default function TodoItem({ todo, onEditClick, onDeleteClick }) {
           aria-label="Default select example"
           style={{ width: "80px", marginRight: "3.5px" }}
         >
-          <option value="all" defaultValue>
-            全て
+          <option value="notStarted" defaultValue>
+            未着手
           </option>
-          <option value="notStarted">未着手</option>
           <option value="inProgress">進行中</option>
           <option value="done">完了</option>
         </select>
